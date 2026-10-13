@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#120A0D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Melanin Bonds">
+<meta name="description" content="Melanin Bonds &amp; Connections Oracle — a 60-card oracle deck of modern romance, soul ties and divine unions.">
+<title>Melanin Bonds &amp; Connections Oracle</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #120A0D;
+    --bg2: #1C1015;
+    --wine: #3A1621;
+    --wine-deep: #26101A;
+    --rose: #C8566B;
+    --gold: #E3B26A;
+    --gold-glow: #F4CF8E;
+    --gold-soft: #B98A4E;
+    --blush: #F2D3C4;
+    --white: #F8EDE4;
+    --white-dim: #CDB9AE;
+    --serif: 'Cormorant Garamond', 'Cormorant', Georgia, 'Times New Roman', serif;
+    --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  svg.icon { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; }
+
+  /* -- ACCESS SCREEN -- */
+  #access-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background:
+      radial-gradient(ellipse at 50% 34%, rgba(200, 86, 107, 0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 38%, #3A1621 0%, var(--bg) 70%);
+    text-align: center;
+  }
+
+  .lock-icon {
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+    animation: pulse 2.8s ease-in-out infinite;
+  }
+
+  .lock-icon svg { width: 76px; height: 52px; fill: none; stroke: currentColor; stroke-width: 2.2; display: block; }
+
+  @keyframes pulse {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(227, 178, 106, 0.45)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 26px rgba(244, 207, 142, 0.8)); transform: scale(1.05); }
+  }
+
+  .access-kicker {
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+
+  #access-screen h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2rem, 7vw, 3rem);
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 0.9rem;
+    max-width: 14ch;
+  }
+
+  #access-screen h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--blush);
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+
+  .ornament::before, .ornament::after {
+    content: '';
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+
+  .ornament::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .ornament span { width: 6px; height: 6px; transform: rotate(45deg); background: var(--gold); }
+
+  #access-screen .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.12rem;
+    color: var(--blush);
+    margin-bottom: 2.2rem;
+  }
+
+  .access-box {
+    background: rgba(58, 22, 33, 0.55);
+    border: 1px solid rgba(227, 178, 106, 0.3);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    max-width: 380px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .access-box label {
+    display: block;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 0.5rem;
+  }
+
+  .access-help {
+    font-size: 0.72rem;
+    color: rgba(242, 211, 196, 0.55);
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  .access-box input {
+    width: 100%;
+    background: rgba(18, 10, 13, 0.85);
+    border: 1px solid rgba(227, 178, 106, 0.38);
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 1.2rem;
+  }
+
+  .access-box input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(227, 178, 106, 0.25);
+  }
+
+  .btn-enter {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold-glow) 0%, var(--gold) 45%, var(--rose) 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 0.95rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1E0C12;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-enter:hover {
+    box-shadow: 0 0 25px rgba(227, 178, 106, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .error-msg {
+    color: #F09AA8;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    display: none;
+  }
+
+  .access-footer {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: rgba(205, 185, 174, 0.42);
+    letter-spacing: 0.14em;
+  }
+
+  /* -- MAIN APP -- */
+  #app {
+    display: none;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(180deg, var(--wine) 0%, transparent 100%);
+    padding: 1.1rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    border-bottom: 1px solid rgba(227, 178, 106, 0.16);
+  }
+
+  header h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.15rem, 3.6vw, 1.5rem);
+    line-height: 1.1;
+    color: var(--white);
+  }
+
+  header .deck-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-counter {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    color: var(--blush);
+    letter-spacing: 0.1em;
+    background: rgba(227, 178, 106, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(227, 178, 106, 0.24);
+    white-space: nowrap;
+  }
+
+  /* -- DECK VIEW -- */
+  #deck-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    background: radial-gradient(ellipse at 50% 40%, rgba(200, 86, 107, 0.12) 0%, transparent 60%);
+  }
+
+  .deck-pile {
+    position: relative;
+    width: 200px;
+    height: 346px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .deck-pile:hover { transform: scale(1.03) translateY(-4px); }
+
+  .deck-card {
+    position: absolute;
+    width: 200px;
+    height: 346px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #f6e9d3 0%, #f2e2c7 60%, #d9bf98 100%);
+    border: 2px solid rgba(227, 178, 106, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deck-card:nth-child(1) { transform: rotate(-6deg) translate(-12px, 10px); opacity: 0.45; filter: brightness(0.7); }
+  .deck-card:nth-child(2) { transform: rotate(-3deg) translate(-6px, 5px); opacity: 0.65; filter: brightness(0.82); }
+  .deck-card:nth-child(3) { transform: rotate(3deg) translate(6px, 3px); opacity: 0.8; filter: brightness(0.9); }
+  .deck-card:nth-child(4) { transform: rotate(0deg); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 44px rgba(200, 86, 107, 0.3); }
+
+  .deck-mark {
+    font-size: 3.2rem;
+    color: #2a1218;
+    opacity: 0.7;
+  }
+
+  .deck-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    border: none;
+    border-radius: 10px;
+    padding: 0.78rem 1.8rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-glow) 0%, var(--gold) 45%, var(--rose) 100%);
+    color: #1E0C12;
+    box-shadow: 0 4px 20px rgba(227, 178, 106, 0.22);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 4px 30px rgba(227, 178, 106, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: rgba(58, 22, 33, 0.7);
+    color: var(--blush);
+    border: 1px solid rgba(227, 178, 106, 0.34);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(58, 22, 33, 0.95);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .deck-hint {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--white-dim);
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  /* -- DRAWN CARD -- */
+  #card-view {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1.5rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .card-scene {
+    perspective: 1000px;
+    width: min(320px, 85vw);
+    cursor: pointer;
+  }
+
+  .card-inner {
+    width: 100%;
+    position: relative;
+    transition: transform 0.15s ease;
+  }
+
+  .card-inner:active { transform: scale(0.97); }
+
+  .card-face, .card-back {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(200, 86, 107, 0.22), 0 0 18px rgba(227, 178, 106, 0.18);
+    border: 2px solid rgba(227, 178, 106, 0.5);
+  }
+
+  .card-back {
+    aspect-ratio: 0.579;
+    background: linear-gradient(145deg, #f6e9d3 0%, #f2e2c7 60%, #d9bf98 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .card-back.has-image { background: none; padding: 0; }
+
+  .card-back.has-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card-back.has-image .mark-large,
+  .card-back.has-image .tap-hint { display: none; }
+
+  .card-back .mark-large {
+    font-size: 4.5rem;
+    color: #2a1218;
+    opacity: 0.75;
+  }
+
+  .card-back .tap-hint {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(42, 18, 24, 0.62);
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .card-face {
+    display: none;
+    position: relative;
+    background: #000;
+  }
+
+  .card-face img { width: 100%; display: block; }
+
+  /* -- Reading panel -- */
+  .reading-hint {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.65;
+    text-align: center;
+  }
+
+  .reading-panel {
+    width: min(360px, 88vw);
+    background: linear-gradient(170deg, rgba(58, 22, 33, 0.72) 0%, rgba(38, 16, 26, 0.6) 100%);
+    border: 1px solid rgba(227, 178, 106, 0.28);
+    border-radius: 16px;
+    padding: 1.5rem 1.4rem 1.2rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .reading-category {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .reading-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 5.6vw, 1.85rem);
+    line-height: 1.1;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .reading-keywords {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--blush);
+    opacity: 0.92;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(227, 178, 106, 0.22);
+  }
+
+  .card-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+    margin-top: 1rem;
+  }
+
+  .card-section-label:first-of-type { margin-top: 0; }
+
+  .card-message {
+    font-size: 1.08rem;
+    line-height: 1.45;
+    color: var(--white);
+    font-style: italic;
+    font-family: var(--serif);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .card-meaning {
+    font-size: 0.84rem;
+    line-height: 1.65;
+    color: var(--white-dim);
+    font-weight: 300;
+  }
+
+  .card-reflection {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--blush);
+    border-left: 2px solid var(--rose);
+    padding-left: 0.75rem;
+    margin-top: 0.3rem;
+  }
+
+  .card-affirmation {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.12rem;
+    line-height: 1.4;
+    color: var(--gold-glow);
+    text-align: center;
+    margin-top: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(227, 178, 106, 0.22);
+  }
+
+  .card-footer-brand {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(205, 185, 174, 0.34);
+    text-align: center;
+  }
+
+  .card-view-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-info-bar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.74rem;
+    color: var(--white-dim);
+    opacity: 0.6;
+  }
+
+  /* -- ALL CARDS VIEW -- */
+  #all-cards-view {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .search-bar {
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+    border-bottom: 1px solid rgba(227, 178, 106, 0.1);
+  }
+
+  .search-bar input {
+    width: 100%;
+    background: rgba(58, 22, 33, 0.5);
+    border: 1px solid rgba(227, 178, 106, 0.26);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--white);
+    outline: none;
+  }
+
+  .search-bar input::placeholder { color: rgba(205, 185, 174, 0.4); }
+  .search-bar input:focus { border-color: var(--gold); }
+
+  .category-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .category-tabs::-webkit-scrollbar { display: none; }
+
+  .cat-tab {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    padding: 0.42rem 0.95rem;
+    border-radius: 20px;
+    border: 1px solid rgba(227, 178, 106, 0.22);
+    color: var(--white-dim);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    font-family: var(--sans);
+  }
+
+  .cat-tab.active, .cat-tab:hover {
+    background: rgba(200, 86, 107, 0.2);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem 1.5rem 2rem;
+    overflow-y: auto;
+  }
+
+  .mini-card {
+    background: rgba(58, 22, 33, 0.5);
+    border: 1px solid rgba(227, 178, 106, 0.16);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .mini-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(200, 86, 107, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .mini-card-num {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .mini-card-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.18rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .mini-card-truth {
+    font-size: 0.74rem;
+    color: var(--white-dim);
+    opacity: 0.75;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* -- LOVE NOTES / JOURNAL -- */
+  #history-view {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.2rem 1.5rem 2rem;
+    gap: 1rem;
+    overflow-y: auto;
+  }
+
+  .history-summary {
+    background: rgba(58, 22, 33, 0.55);
+    border: 1px solid rgba(227, 178, 106, 0.24);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+  }
+
+  .history-summary-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+
+  .history-count {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--white);
+  }
+
+  .history-count span {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.75;
+    margin-left: 0.4rem;
+  }
+
+  .history-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .history-repeat {
+    font-size: 0.8rem;
+    color: var(--white-dim);
+    line-height: 1.7;
+  }
+
+  .history-repeat b {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .history-day {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.72;
+    margin: 0.6rem 0 0.1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(227, 178, 106, 0.16);
+  }
+
+  .history-entry {
+    display: flex;
+    gap: 0.7rem;
+    padding: 0.7rem 0 0.5rem;
+    border-bottom: 1px solid rgba(227, 178, 106, 0.08);
+  }
+
+  .history-thumb {
+    width: 42px;
+    flex: 0 0 42px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: rgba(227, 178, 106, 0.08);
+  }
+
+  .history-body { flex: 1; min-width: 0; }
+
+  .history-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .history-meta {
+    font-size: 0.66rem;
+    color: var(--white-dim);
+    opacity: 0.62;
+    margin-bottom: 0.35rem;
+  }
+
+  .history-note {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed rgba(227, 178, 106, 0.28);
+    padding: 0.2rem 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--blush);
+    outline: none;
+  }
+
+  .history-note::placeholder { color: rgba(205, 185, 174, 0.34); font-style: italic; }
+  .history-note:focus { border-bottom-color: var(--gold); }
+
+  .history-empty {
+    text-align: center;
+    color: var(--white-dim);
+    opacity: 0.65;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 2.5rem 1rem;
+  }
+
+  .history-actions {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+
+  .history-actions .btn { padding: 0.6rem 1.2rem; font-size: 0.7rem; }
+
+  .history-actions .btn-danger {
+    background: rgba(200, 86, 107, 0.9);
+    border-color: #F09AA8;
+    color: var(--white);
+  }
+
+  .history-hint {
+    font-size: 0.64rem;
+    color: var(--white-dim);
+    opacity: 0.48;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* -- NAV BAR -- */
+  nav {
+    display: flex;
+    background: rgba(18, 10, 13, 0.95);
+    border-top: 1px solid rgba(227, 178, 106, 0.16);
+    padding: 0.45rem 0 calc(0.45rem + env(safe-area-inset-bottom));
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--sans);
+    color: rgba(205, 185, 174, 0.45);
+  }
+
+  .nav-btn .nav-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-btn.active, .nav-btn:hover { color: var(--gold); }
+  .nav-btn.active .nav-label { color: var(--blush); }
+  .nav-btn.active svg.icon { filter: drop-shadow(0 0 6px rgba(227, 178, 106, 0.7)); }
+
+  /* -- ANIMATIONS -- */
+  @keyframes shuffle {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    20%  { transform: translate(-15px, -5px) rotate(-5deg); }
+    40%  { transform: translate(15px, -8px) rotate(5deg); }
+    60%  { transform: translate(-8px, 5px) rotate(-2deg); }
+    80%  { transform: translate(8px, 3px) rotate(3deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  .shuffling .deck-card:nth-child(4) { animation: shuffle 0.6s ease-in-out 3; }
+
+  /* -- SPREAD VIEW -- */
+  #spread-view {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow-y: auto;
+  }
+
+  .spread-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .spread-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.75;
+    text-align: center;
+    margin-top: -1.1rem;
+  }
+
+  .spread-picker {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .spread-picker-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  .spread-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .spread-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(227, 178, 106, 0.3);
+    user-select: none;
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0.95rem;
+    border-radius: 22px;
+    border: 1px solid rgba(227, 178, 106, 0.32);
+    background: rgba(58, 22, 33, 0.55);
+    color: var(--white-dim);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .spread-tab-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: rgba(227, 178, 106, 0.18);
+    color: var(--blush);
+    font-size: 0.64rem;
+    line-height: 1;
+  }
+
+  .spread-tab:hover {
+    border-color: var(--gold);
+    color: var(--white);
+    transform: translateY(-1px);
+  }
+
+  .spread-tab.active {
+    background: linear-gradient(135deg, rgba(244, 207, 142, 0.95) 0%, rgba(227, 178, 106, 0.95) 45%, rgba(200, 86, 107, 0.95) 100%);
+    border-color: var(--gold);
+    color: #1E0C12;
+    font-weight: 500;
+    box-shadow: 0 2px 14px rgba(227, 178, 106, 0.3);
+  }
+
+  .spread-tab.active .spread-tab-num {
+    background: rgba(18, 10, 13, 0.3);
+    color: var(--white);
+  }
+
+  .spread-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--white-dim);
+    opacity: 0.78;
+    text-align: center;
+    max-width: 460px;
+    line-height: 1.45;
+    margin-top: -0.6rem;
+  }
+
+  .spread-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .spread-card-slot {
+    aspect-ratio: 0.579;
+    border-radius: 10px;
+    border: 1px solid rgba(227, 178, 106, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .spread-card-slot.unrevealed {
+    background: linear-gradient(145deg, #f6e9d3 0%, #f2e2c7 60%, #d9bf98 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spread-card-slot.unrevealed:hover {
+    box-shadow: 0 0 20px rgba(200, 86, 107, 0.45);
+    transform: translateY(-3px);
+  }
+
+  .spread-card-slot.revealed {
+    aspect-ratio: auto;
+    background: linear-gradient(160deg, var(--wine) 0%, var(--bg) 100%);
+    border-color: rgba(227, 178, 106, 0.45);
+    padding: 0.5rem 0.42rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spread-slot-img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 0.45rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .spread-slot-read {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.88;
+    margin-top: 0.4rem;
+  }
+
+  .spread-slot-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .spread-slot-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(0.64rem, 2.6vw, 0.92rem);
+    letter-spacing: -0.01em;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+    overflow-wrap: break-word;
+  }
+
+  .spread-slot-hint {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.74rem;
+    color: var(--white-dim);
+    opacity: 0.65;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 340px) {
+    #spread-view { padding: 1.5rem 0.9rem; }
+    .spread-grid { gap: 0.5rem; }
+  }
+
+  .spread-mark { font-size: 1.6rem; color: #2a1218; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<!-- ACCESS SCREEN -->
+<div id="access-screen">
+  <div class="lock-icon" aria-hidden="true">
+    <svg viewBox="0 0 76 52"><circle cx="27" cy="26" r="20"/><circle cx="49" cy="26" r="20"/></svg>
+  </div>
+  <p class="access-kicker">60-Card Love Oracle</p>
+  <h1>Melanin Bonds <em>&amp;</em> Connections Oracle</h1>
+  <div class="ornament" aria-hidden="true"><span></span></div>
+  <p class="subtitle">Modern Romance, Soul Ties &amp; Divine Unions</p>
+
+  <div class="access-box">
+    <label for="code-input">Enter Your Access Code</label>
+    <p class="access-help">Type your code, then tap Unlock</p>
+    <input type="text" id="code-input" placeholder="" maxlength="20"
+      autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+    <button class="btn-enter" onclick="checkCode()">Unlock the Deck</button>
+    <div class="error-msg" id="error-msg">✗ Invalid access code. Try again.</div>
+  </div>
+
+  <p class="access-footer">PsychicSoulStar · Melanin Bonds &amp; Connections Oracle</p>
+</div>
+
+<!-- MAIN APP -->
+<div id="app">
+  <header>
+    <div>
+      <span class="deck-badge">60-Card Love Oracle</span>
+      <h1>Melanin Bonds &amp; Connections</h1>
+    </div>
+    <span class="card-counter" id="counter">60 Cards</span>
+  </header>
+
+  <!-- DECK VIEW -->
+  <div id="deck-view">
+    <div class="deck-pile" id="deck-pile" onclick="drawCard()">
+      <div class="deck-card"></div>
+      <div class="deck-card"></div>
+      <div class="deck-card"></div>
+      <div class="deck-card" style="overflow:hidden;">
+        <img src="card_back.webp" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="deck-mark" style="display:none;">✦</span>
+      </div>
+    </div>
+    <div class="deck-actions">
+      <button class="btn btn-primary" onclick="shuffleDeck()">✦ Shuffle</button>
+      <button class="btn btn-secondary" onclick="drawCard()">Pull a Card</button>
+    </div>
+    <p class="deck-hint">Hold your question in your heart, then tap the deck</p>
+  </div>
+
+  <!-- DRAWN CARD VIEW -->
+  <div id="card-view">
+    <div class="card-scene" id="card-scene" onclick="flipCard()">
+      <div class="card-inner" id="card-inner">
+        <div class="card-back has-image" id="card-back-el">
+          <img src="card_back.webp" alt="Melanin Bonds &amp; Connections Oracle — card back" onerror="this.parentElement.classList.remove('has-image'); this.remove();">
+          <span class="mark-large">✦</span>
+          <span class="tap-hint">Tap to reveal</span>
+        </div>
+        <div class="card-face" id="card-face"></div>
+      </div>
+    </div>
+
+    <p class="reading-hint" id="reading-hint" style="display:none;">Scroll down for the full reading</p>
+
+    <div class="reading-panel" id="reading-panel" style="display:none;"></div>
+
+    <div class="card-info-bar">
+      <span id="drawn-count">Card pulled</span>
+      <span>·</span>
+      <span>Tap card to reveal</span>
+    </div>
+
+    <div class="card-view-actions" id="card-view-actions">
+      <button class="btn btn-primary" onclick="drawCard()">Pull Another</button>
+      <button class="btn btn-secondary" onclick="showDeck()">Back to Deck</button>
+    </div>
+  </div>
+
+  <!-- ALL CARDS VIEW -->
+  <div id="all-cards-view">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search all 60 cards..."
+        oninput="filterCards()" autocomplete="off">
+    </div>
+    <div class="category-tabs" id="cat-tabs"></div>
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+
+  <!-- LOVE NOTES (JOURNAL) VIEW -->
+  <div id="history-view">
+    <div class="history-summary" id="history-summary"></div>
+    <div class="history-list" id="history-list"></div>
+    <div class="history-actions">
+      <button type="button" class="btn btn-secondary" onclick="exportHistory(this)">Copy my love notes</button>
+      <button type="button" class="btn btn-secondary" onclick="clearHistory(this)">Clear</button>
+    </div>
+    <p class="history-hint">Saved on this device only. Clearing your browser data erases it —
+      use Copy my love notes to keep a permanent record.</p>
+  </div>
+
+  <!-- SPREAD VIEW -->
+  <div id="spread-view">
+    <div class="spread-picker">
+      <span class="spread-picker-label">Choose a spread</span>
+      <div class="spread-tabs" id="spread-tabs">
+      <button type="button" class="spread-tab" data-spread="0"><span class="spread-tab-num">1</span>The Heart Check</button>
+      <button type="button" class="spread-tab active" data-spread="1"><span class="spread-tab-num">3</span>Me, You &amp; Us</button>
+      <button type="button" class="spread-tab" data-spread="2"><span class="spread-tab-num">3</span>Situationship Clarity</button>
+      <button type="button" class="spread-tab" data-spread="3"><span class="spread-tab-num">4</span>The Love Journey</button>
+      <button type="button" class="spread-tab" data-spread="4"><span class="spread-tab-num">5</span>Divine Union</button>
+      </div>
+    </div>
+    <p class="spread-title" id="spread-title"></p>
+    <p class="spread-subtitle" id="spread-subtitle"></p>
+    <div class="spread-grid" id="spread-grid"></div>
+    <p class="spread-note" id="spread-note"></p>
+    <button class="btn btn-primary" onclick="newSpread()">New Spread</button>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav>
+    <button class="nav-btn active" id="nav-deck" onclick="switchView('deck')">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="11" height="16" rx="2"/><path d="M5 7v11a3 3 0 0 0 3 3h8"/><path d="M13.5 9.2c-.9-1-2.6-.3-2.3 1 .2 1 2.3 2.3 2.3 2.3s2.1-1.3 2.3-2.3c.3-1.3-1.4-2-2.3-1z"/></svg>
+      <span class="nav-label">Pull</span>
+    </button>
+    <button class="nav-btn" id="nav-spread" onclick="switchView('spread')">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="6" height="10" rx="1.2"/><rect x="9" y="5" width="6" height="10" rx="1.2"/><rect x="15.5" y="7" width="6" height="10" rx="1.2"/><path d="M12 19.5v1.5M9.5 20.2h5"/></svg>
+      <span class="nav-label">Spreads</span>
+    </button>
+    <button class="nav-btn" id="nav-all" onclick="switchView('all')">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+      <span class="nav-label">All 60</span>
+    </button>
+    <button class="nav-btn" id="nav-history" onclick="switchView('history')">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M12 7.6c-.8-.9-2.3-.3-2 .9.2.9 2 2 2 2s1.8-1.1 2-2c.3-1.2-1.2-1.8-2-.9z"/></svg>
+      <span class="nav-label">Love Notes</span>
+    </button>
+  </nav>
+</div>
+
+<script>
+
+// -- CARD DATA --
+const CATEGORIES = ["Sparks & Attractions", "Situationships & Red Flags", "Healing & Self-Love", "Divine Unions & Future Connections"];
+
+const CAT_TABS = ["✦ Sparks & Attractions", "◆ Situationships & Red Flags", "❖ Healing & Self-Love", "✵ Divine Unions"];
+
+const CARDS = [
+  {"id": 1, "cat": 0, "name": "SHOOTING YOUR SHOT", "keywords": "Courage · Confession · First move · Luck in love", "message": "Take the leap and express your true feelings. The universe favors the bold; your shot will not miss.", "meaning": "Say it. Shooting Your Shot arrives when you have been rehearsing a feeling instead of sharing it — the text you keep drafting, the date you keep almost suggesting. Right now boldness is favoured. The worst outcome is a clear answer, and a clear answer frees you either way. Ask the question, name the day, and let them respond to the real you rather than the version waiting in the wings.", "reflection": "What would I say to them today if I knew the answer would be kind?", "affirmation": "I take the leap. My courage opens the door to love."},
+  {"id": 2, "cat": 0, "name": "CHOOSING SIGNALS", "keywords": "Green lights · Subtle hints · Flirting · Open door", "message": "Green lights are flashing. Pay close attention to the subtle hints and open doors being presented to you.", "meaning": "The interest is not in your head. Choosing Signals says someone is already leaning toward you — the lingering eye contact, the reply that comes a little too fast, the reason they keep finding to be near you. They are leaving the door open on purpose. Watch the body language and the small invitations, then walk through. The opening is real, but it will not stay open forever.", "reflection": "What signal have I been explaining away because I was afraid to believe it?", "affirmation": "I see the green lights clearly, and I trust them."},
+  {"id": 3, "cat": 0, "name": "APPLYING PRESSURE", "keywords": "Consistency · Clear intention · Effort · Pursuit", "message": "Show consistent effort and clear intentions. Do not hesitate to pursue what your heart truly desires.", "meaning": "Half-effort will not win this one. Applying Pressure asks you to show up steadily and plainly — call when you said you would, plan the date, make your interest impossible to misread. Mixed messages from you create doubt in them. This is not about intensity; it is about consistency. Let your actions remove every question about where you stand.", "reflection": "Where have I been playing it cool when clarity would serve me better?", "affirmation": "I pursue what I want with steady, honest effort."},
+  {"id": 4, "cat": 0, "name": "EYE CANDY", "keywords": "Instant attraction · First impression · Magnetism · Fascination", "message": "Immediate, irresistible attraction. Someone's radiant presence has completely captured your focus and imagination.", "meaning": "Someone has your full attention. Eye Candy marks the powerful first pull — the face you cannot stop noticing, the presence that rearranges the room. Enjoy it; attraction is a gift and it is meant to be felt. Just remember that the eyes fall first and the heart decides later. Let the spark invite you closer, then let time show you what is underneath.", "reflection": "Beyond how they look, what do I actually know about who they are?", "affirmation": "I enjoy the spark and let time reveal the substance."},
+  {"id": 5, "cat": 0, "name": "THE TALKING STAGE", "keywords": "Getting to know · Early days · Patience · Real conversation", "message": "Navigating the initial waters of connection. Take your time to communicate deeply and uncover their true layers.", "meaning": "You are at the beginning, and the beginning is the point. The Talking Stage asks you not to rush the label or skip the questions. Learn their values, their history, the way they treat people when nothing is at stake. Ask what you actually want to know. The talking is not the waiting room for the relationship — it is where you find out whether there should be one.", "reflection": "What do I still need to learn about them before I give more of myself?", "affirmation": "I take my time, and I let the truth unfold in conversation."},
+  {"id": 6, "cat": 0, "name": "CAUGHT FEELINGS", "keywords": "Falling in love · Vulnerability · Surprise · Tenderness", "message": "Love has taken you by surprise. Embrace the vulnerability and allow your heart to feel the warmth of this genuine spark.", "meaning": "It happened before you were ready. Caught Feelings names the moment affection crossed the line you were holding — and the urge to pull back or play it down. Do not punish yourself for feeling. Admit it to yourself first, then decide how much to share. Softness is not weakness here; it is the beginning of something that could be real.", "reflection": "What feeling am I trying to talk myself out of?", "affirmation": "I let myself feel. My open heart is safe to love."},
+  {"id": 7, "cat": 0, "name": "VIBE CHECK: PASSED", "keywords": "Compatibility · Same frequency · Ease · Safe connection", "message": "The energetic alignment is perfect. You are both on the same frequency, and the connection feels effortlessly safe.", "meaning": "The vibe check came back clean. Vibe Check: Passed confirms a genuine match of energy — similar values, similar pace, conversation that flows without effort. Around this person you do not have to perform. Notice that calm; after chaotic connections, peace can feel unfamiliar or even boring. It is neither. It is what compatibility actually feels like.", "reflection": "Do I recognise ease as a good sign, or am I still mistaking chaos for chemistry?", "affirmation": "I welcome love that feels safe, easy, and aligned."},
+  {"id": 8, "cat": 0, "name": "THIRST TRAP", "keywords": "Seduction · Allure · Charm · Surface vs depth", "message": "Magnetic seduction and undeniable allure. Use your natural charm wisely, but beware of surface-level infatuation.", "meaning": "The heat is real. Thirst Trap speaks to magnetism — yours or theirs — and the way desire can sharpen focus and blur judgement at the same time. Own your charm and enjoy being wanted. But this card also asks you to look past the highlight reel. Attraction alone cannot tell you about loyalty, kindness or follow-through. Desire is the invitation, not the evidence.", "reflection": "Am I drawn to who they are, or only to how they make me feel in the moment?", "affirmation": "I own my allure and I choose with open eyes."},
+  {"id": 9, "cat": 0, "name": "CHEMISTRY UNMATCHED", "keywords": "Electric pull · Spiritual chemistry · Destined spark · Synchronicity", "message": "An undeniable spiritual and physical pull. The universe has perfectly synchronized your hearts for a powerful union.", "meaning": "This connection carries a current. Chemistry Unmatched marks a rare pull that works on every level — body, mind and spirit — as if the timing was arranged. Being near them feels charged and strangely familiar. Honour it. Chemistry this strong is a sign to pay attention, and a reminder to build trust at the same pace as the attraction.", "reflection": "What does this connection awaken in me that I had forgotten?", "affirmation": "I honour the powerful connection the universe placed in my path."},
+  {"id": 10, "cat": 0, "name": "BAE MATERIAL", "keywords": "Long-term potential · Loyalty · Good character · Keeper", "message": "High-quality potential for long-term love. This person possesses the character, loyalty, and heart to stand by your side.", "meaning": "This one is built for the long run. Bae Material points to a person with the qualities that last — honesty, care, steadiness, follow-through. They treat you well when no one is watching. If you have been holding back because you are waiting for the catch, consider that there may not be one. Good character is worth investing in.", "reflection": "Am I looking for a reason to doubt someone who has only shown me consistency?", "affirmation": "I recognise real quality, and I let it in."},
+  {"id": 11, "cat": 0, "name": "SPARKS FLYING", "keywords": "Butterflies · Romantic tension · Excitement · Momentum", "message": "Electric excitement and undeniable tension. The romantic energy between you is intensifying rapidly; enjoy the thrill.", "meaning": "The energy between you is rising. Sparks Flying captures the thrilling part — the butterflies, the anticipation, the tension that makes every message feel important. Things are moving forward quickly and joyfully. Enjoy the ride without trying to control the speed. Stay present and let the excitement be what it is: a sign that something alive is growing.", "reflection": "How can I enjoy this feeling without rushing to define it?", "affirmation": "I welcome the thrill of love and enjoy every spark."},
+  {"id": 12, "cat": 0, "name": "MAKING MOVES", "keywords": "Taking action · Next level · Real plans · Intention", "message": "Transitioning from words to direct action. Take the relationship to the next level by locking in a real plan.", "meaning": "Talk has gone as far as it can. Making Moves says it is time to turn the conversation into something real — the actual date, the defined relationship, the plan with a time and a place. Show them you are serious through action. Waiting for the perfect moment only gives doubt more room. Lock in the plan and step forward.", "reflection": "What concrete step would show them I am not just playing?", "affirmation": "I move from words to action, and I lock in what I want."},
+  {"id": 13, "cat": 0, "name": "ALL EYES ON YOU", "keywords": "Being chosen · Focus · Worth recognised · Full attention", "message": "You are the absolute center of their universe right now. Your worth is fully recognized; do not accept anything less.", "meaning": "You are the one they see. All Eyes On You confirms that their attention is fully yours — not split, not casual, not on rotation. Your worth is recognised. Let this card raise your standard: once you know what it feels like to be someone's clear focus, half-hearted attention from anyone else should never be enough again.", "reflection": "Have I been accepting less attention than I give?", "affirmation": "I am fully seen, and I accept nothing less."},
+  {"id": 14, "cat": 0, "name": "THE MIXTAPE", "keywords": "Thoughtful gestures · Courtship · Romance · Effort", "message": "Pure romance, thoughtful gestures, and emotional courtship. Someone is investing creative energy to make you feel truly special.", "meaning": "Someone is putting their heart into impressing you. The Mixtape is old-school romance — the playlist made just for you, the remembered detail, the plan that took real thought. Notice the effort and receive it gracefully. And if you are the one courting, this is your sign that small, personal gestures speak louder than grand displays.", "reflection": "What thoughtful gesture have I received lately that I have not fully appreciated?", "affirmation": "I give and receive love through thoughtful, sincere gestures."},
+  {"id": 15, "cat": 0, "name": "CUFFED PREPARATION", "keywords": "Readiness to commit · Exclusivity · Settling down · Security", "message": "Readiness to commit and settle down. The playful games are ending, making way for a secure, exclusive partnership.", "meaning": "The games are winding down. Cuffed Preparation signals a readiness for commitment — the desire to stop keeping options open and build something exclusive. Get honest about what you want before the conversation happens. If both of you are leaning in, this is the season to define it. Choosing one person fully is a gift to both of you.", "reflection": "Am I truly ready to commit, and do I know what I am committing to?", "affirmation": "I am ready for a secure, devoted love."},
+  {"id": 16, "cat": 1, "name": "SITUATIONSHIP", "keywords": "Gray area · No label · Ambiguity · Need for clarity", "message": "Living in the gray area. Everything feels like a relationship except the label. Time to demand clarity or protect your heart.", "meaning": "It feels like a relationship in every way except the one that matters. Situationship names the comfortable confusion of all the benefits and none of the commitment. The longer it continues undefined, the more it costs the person who wants more. Ask the question plainly. A clear answer — even the one you fear — is kinder to your heart than another month of guessing.", "reflection": "What am I afraid will happen if I ask what this really is?", "affirmation": "I deserve clarity, and I ask for it with courage."},
+  {"id": 17, "cat": 1, "name": "RED FLAG", "keywords": "Warning signs · Bad behaviour · Denial · Step back", "message": "Stop ignoring what you clearly see. The warning signs are flashing for a reason. Believe the energy the first time.", "meaning": "You already saw it. Red Flag appears when a warning sign has been noticed and then explained away — the temper, the lie, the disrespect, the way they talk about their exes. Believe the first showing. People reveal themselves early, and hope is not a strategy. Step back, look again with clear eyes, and let what you see decide.", "reflection": "Which warning sign have I been excusing because I liked everything else?", "affirmation": "I believe what I see the first time."},
+  {"id": 18, "cat": 1, "name": "MIXED SIGNALS", "keywords": "Hot and cold · Inconsistency · Confusion · Uncertainty", "message": "Hot and cold behavior that leaves you confused. If they wanted you to know, you wouldn't have to guess. Reclaim your certainty.", "meaning": "One day warm, the next day distant. Mixed Signals describes the inconsistency that keeps you analysing every message and rereading every word. Here is the clarity you are looking for: if someone truly wants you, you will not have to decode it. Stop trying to solve them. Pay attention to the pattern, not the good days.", "reflection": "How much of my energy is spent trying to interpret their behaviour?", "affirmation": "I choose love that is clear. I no longer guess."},
+  {"id": 19, "cat": 1, "name": "BREADCRUMBING", "keywords": "Crumbs of attention · Being strung along · Hope · Self-worth", "message": "Receiving just enough attention to keep you hooked, but never enough to make you feel secure. You deserve a full feast, not crumbs.", "meaning": "Just enough to keep you waiting. Breadcrumbing names the occasional sweet message, the late-night check-in, the promise of plans that never quite happen. It is attention without intention. Count the crumbs honestly and you will see there is no meal coming. You deserve someone who sits down at the table with you.", "reflection": "What am I still waiting for that has been promised but never delivered?", "affirmation": "I deserve a full feast of love, not crumbs."},
+  {"id": 20, "cat": 1, "name": "LOVE BOMBING", "keywords": "Too much too soon · Overwhelm · Control · Test of time", "message": "Too much, too soon. Intense affection designed to overwhelm your judgment. Step back and let time test their sincerity.", "meaning": "It is moving faster than real trust can grow. Love Bombing warns of intensity used as leverage — the flood of compliments, gifts and big declarations that leaves you no room to think. Real love can be passionate, but it is never in a hurry to own you. Slow the pace and watch how they react. Sincerity survives patience; manipulation does not.", "reflection": "Does this person respect my pace, or push me to keep up with theirs?", "affirmation": "I let time reveal what is real."},
+  {"id": 21, "cat": 1, "name": "GHOSTED", "keywords": "Sudden silence · No closure · Disappearance · Self-closure", "message": "A sudden wall of silence. Do not search for answers from someone who chose to disappear. Their absence is your closure.", "meaning": "They left without a word. Ghosted names the sudden silence and the questions it leaves behind. You will not get the explanation you are waiting for, and chasing it keeps you tied to someone who has already gone. Their silence is the answer. Give yourself the closure they would not give you, and turn toward people who stay.", "reflection": "What closure can I give myself instead of waiting for theirs?", "affirmation": "Their absence is my answer. I close this chapter myself."},
+  {"id": 22, "cat": 1, "name": "THE EX-FACTOR", "keywords": "Past love · Unfinished business · Old wounds · Clearing space", "message": "Old ghosts and unresolved baggage disrupting the present. Clear out the shadows of the past before building a new foundation.", "meaning": "The past is still in the room. The Ex-Factor points to unresolved history — an ex who keeps reappearing, or old hurt that shapes how you love now. You cannot fully begin something new while part of you is still living in something old. Do the clearing: the honest conversation, the unfollow, the inner work. Then build fresh.", "reflection": "What part of my past relationship am I still bringing into my present?", "affirmation": "I release the past and make room for new love."},
+  {"id": 23, "cat": 1, "name": "GASLIGHTING", "keywords": "Manipulation · Self-doubt · Twisted truth · Trust your gut", "message": "Manipulating the truth to make you doubt your own sanity. Trust your memory, honor your gut, and refuse to accept their narrative.", "meaning": "You are not imagining it. Gaslighting warns of a person who rewrites events until you question your own memory and judgement. If you constantly feel confused, over-apologise or doubt what you saw, take that seriously. Write things down. Talk to someone you trust. Your perception is valid, and no love is worth losing your grip on what is real.", "reflection": "When did I last doubt my own memory because someone insisted I was wrong?", "affirmation": "I trust my mind, my memory, and my truth."},
+  {"id": 24, "cat": 1, "name": "SNEAKY LINK", "keywords": "Secrecy · Hidden connection · Shadows · Worth being seen", "message": "Keeping the connection in the dark. Ask yourself why you are hidden from the world. True alignment requires no secrets.", "meaning": "Why is this kept in the dark? Sneaky Link appears around connections that cannot be shown — the meetings no one knows about, the relationship that exists only in private. Ask honestly who the secrecy protects. Love that is genuine and aligned wants to be seen. You deserve a connection you do not have to hide.", "reflection": "Who benefits from keeping this connection a secret?", "affirmation": "I deserve a love that stands proudly in the light."},
+  {"id": 25, "cat": 1, "name": "NO STRINGS ATTACHED", "keywords": "Casual terms · Pleasure · Emotional risk · Honest check-in", "message": "A contract built strictly on pleasure without emotional responsibility. Make sure your heart can actually afford the price.", "meaning": "The terms are casual — but are you? No Strings Attached speaks to an arrangement built on fun without commitment. That can be a fair choice when both people truly want the same thing. This card asks for a real check-in with your heart: are you at peace with these terms, or quietly hoping they will change? Answer honestly before you go further.", "reflection": "If this stayed exactly as it is, would I be at peace?", "affirmation": "I am honest with myself about what my heart needs."},
+  {"id": 26, "cat": 1, "name": "ON THE BENCH", "keywords": "Backup plan · Kept waiting · Low priority · Walk away", "message": "Being kept on hold while they scan other options. Do not wait for someone who treats you like a backup plan. Evolve and leave.", "meaning": "You are being kept on standby. On The Bench describes being held as an option — contacted when it suits them, set aside when something else appears. Waiting harder will not move you to first place. Stand up and leave the bench. Your love belongs with someone who chooses you first and keeps choosing you.", "reflection": "Am I someone's priority, or someone's backup?", "affirmation": "I am nobody's option. I am someone's first choice."},
+  {"id": 27, "cat": 1, "name": "RENT FREE", "keywords": "Overthinking · Obsession · Reclaiming the mind · Letting go", "message": "Allowing someone who doesn't care to occupy your thoughts. Evict their memory from your mind and reclaim your mental sanctuary.", "meaning": "They live in your head and pay nothing for it. Rent Free names the endless replaying — checking their profile, rehearsing conversations, wondering what they are doing — while they are not thinking of you at all. It is time to evict them. Redirect that attention back to your own life. Your mind is precious space; give it to what gives back.", "reflection": "What would I do with all the energy I spend thinking about them?", "affirmation": "I reclaim my thoughts. My mind is my sanctuary."},
+  {"id": 28, "cat": 1, "name": "EMOTIONALLY UNAVAILABLE", "keywords": "Walls up · Closed heart · Unhealed wounds · Save your energy", "message": "High emotional walls and a closed heart. You cannot heal a palace that refuses to open its gates. Save your energy.", "meaning": "The door is locked from the inside. Emotionally Unavailable describes someone who cannot meet you emotionally — guarded, distant, or carrying wounds they refuse to tend. You cannot love a person into opening up. That work is theirs. Stop pouring warmth into a closed space, and offer it where someone can actually receive it.", "reflection": "Am I trying to earn love from someone who has not opened the door?", "affirmation": "I give my love where it can be received."},
+  {"id": 29, "cat": 1, "name": "CUTTING TIES", "keywords": "Clean break · Ending toxicity · No return · Self-respect", "message": "The definitive end of a toxic cycle. Sever the connection entirely and walk forward without guilt. Your peace demands it.", "meaning": "It is time to end it for real. Cutting Ties is the decisive card — the block, the boundary, the choice not to go back. Toxic cycles survive on half-goodbyes. Make this one complete and do not carry guilt for protecting yourself. Releasing the wrong person is how space opens for the right one.", "reflection": "What door have I left slightly open that I need to close for good?", "affirmation": "I cut ties without guilt. My peace comes first."},
+  {"id": 30, "cat": 1, "name": "THE REBOUND", "keywords": "Moving on too fast · Loneliness · Old wound · Honest motive", "message": "Rushing into a new connection to heal an old wound. Ensure this love is built on genuine spark, not the fear of loneliness.", "meaning": "Is this love, or is this distraction? The Rebound appears when a new connection arrived quickly after an ending — and asks whether it is built on genuine feeling or on the fear of being alone. New love can be real even when it is fast. Just make sure you are choosing this person, not running from the empty space.", "reflection": "Would I still want this person if I were not trying to forget someone else?", "affirmation": "I choose love from wholeness, not from fear."},
+  {"id": 31, "cat": 2, "name": "PROTECTING MY PEACE", "keywords": "Inner peace · Boundaries · Stillness · Choosing calm", "message": "Your peace is a sacred boundary. Choose stillness over chaos and step away from what disrupts your alignment.", "meaning": "Your peace is not up for negotiation. Protecting My Peace asks you to choose calm over chaos — to step out of the argument, decline the drama and stop holding together a connection that only disturbs you. Draw a line that no one may cross. Guarding your peace is not cold; it is how you stay well enough to love.", "reflection": "What or who has been costing me my peace lately?", "affirmation": "My peace is sacred, and I protect it."},
+  {"id": 32, "cat": 2, "name": "THE GLOW UP", "keywords": "Transformation · Evolution · Radiance · Living well", "message": "The ultimate response to heartbreak is your own evolution. Radiate your light and let your transformation speak for itself.", "meaning": "Heartbreak became your turning point. The Glow Up celebrates the version of you that rose after the hurt — healthier, wiser, more radiant, more sure. This is not revenge. It is simply what happens when you invest in yourself. Let your growth speak without needing anyone to notice. The best response to pain is a beautiful life.", "reflection": "What has grown in me since the heartbreak that I have not yet celebrated?", "affirmation": "I let my transformation speak for itself."},
+  {"id": 33, "cat": 2, "name": "CHOOSING ME", "keywords": "Self-priority · Self-respect · Own needs · First choice", "message": "You are your own first choice. Pour love into your own soul before trying to fill anyone else’s space.", "meaning": "Choose yourself first. Choosing Me arrives when you have been bending to keep others happy and forgetting what you need. Turn the love inward. Rest, honour your wants and stop shrinking to fit someone else's comfort. A love that requires you to abandon yourself is not the love you are looking for.", "reflection": "Where have I put myself last to keep someone else comfortable?", "affirmation": "I am my own first choice."},
+  {"id": 34, "cat": 2, "name": "UNBOTHERED & ELEVATED", "keywords": "Above the drama · Calm · Detachment · High frequency", "message": "Completely detached from the drama. Your frequency is too high to be brought down by surface-level noise.", "meaning": "The noise cannot reach you now. Unbothered & Elevated describes a calm that comes from standing above the gossip, the games and the attempts to provoke you. You do not need to respond to everything. Stay on your level. Your energy is too valuable to spend on people who are only looking for a reaction.", "reflection": "What reaction am I being baited into, and how can I simply decline?", "affirmation": "I am unbothered, elevated, and at peace."},
+  {"id": 35, "cat": 2, "name": "HEALED ERA", "keywords": "Healed heart · Joy returns · Freedom · New season", "message": "The wounds are closed, and the joy has returned. Celebrate your freedom and step into your happiest season.", "meaning": "The wound has closed. Healed Era marks the season when old pain no longer runs your choices — when you can think about the past without it stinging and look at the future without fear. Celebrate that. You did the work. Now enjoy the freedom and lightness of a heart that is whole again.", "reflection": "How do I know I have healed, and how can I honour that?", "affirmation": "My heart is healed, and joy is mine again."},
+  {"id": 36, "cat": 2, "name": "IN MY BAG", "keywords": "Self-focus · Ambition · Stability · Building wealth", "message": "Shift your focus from emotional distractions to your personal empire. Secure your stability and multiply your worth.", "meaning": "Turn heartbreak into momentum. In My Bag says to redirect the energy you were spending on someone else into building your own life — your work, your income, your security. Focus is a powerful healer. When you are busy creating stability and success, the wrong people lose their power over your mood.", "reflection": "What goal deserves the energy I have been giving to heartache?", "affirmation": "I focus on building my empire, and my worth grows."},
+  {"id": 37, "cat": 2, "name": "BOUNDARIES ON LOCK", "keywords": "Firm limits · Saying no · Protection · Self-respect", "message": "Access denied to toxic energy. Establish your limits firmly and guard the gates of your heart with pride.", "meaning": "The gate is closed to what hurts you. Boundaries On Lock asks you to set clear limits and hold them without apology — no reopening the door for someone who has already shown you who they are. Saying no is not unkind. Boundaries teach people how to treat you, and they keep your heart in safe hands: your own.", "reflection": "Which boundary have I set but not yet enforced?", "affirmation": "My boundaries are strong, and I keep them with pride."},
+  {"id": 38, "cat": 2, "name": "RADICAL SELF-CARE", "keywords": "Rest · Nurture · Body and spirit · Restoration", "message": "Nurture your temple and soothe your spirit. Rest is a radical act of love and a necessary step for your revival.", "meaning": "Rest is part of your healing. Radical Self-Care calls you to nurture your body, mind and spirit with real intention — sleep, nourishment, quiet, the things that genuinely restore you. This is not indulgence. You have been carrying a lot. Recharging now is the most loving thing you can do for the version of you who is ready to love again.", "reflection": "What does my body and spirit truly need from me this week?", "affirmation": "I nurture myself. Rest is an act of love."},
+  {"id": 39, "cat": 2, "name": "FILLING YOUR OWN CUP", "keywords": "Self-fulfilment · Wholeness · Independent joy · Overflow", "message": "You cannot pour from an empty vessel. Recharge your own energy until your happiness overflows naturally.", "meaning": "You cannot pour from an empty cup. Filling Your Own Cup says your happiness must not depend on someone else showing up. Find what fills you — friendship, purpose, play, creativity — and build a life that already feels full. The healthiest love arrives when you are complete, sharing your overflow rather than searching for someone to fill you.", "reflection": "What brings me joy that has nothing to do with being in a relationship?", "affirmation": "I fill my own cup until joy overflows."},
+  {"id": 40, "cat": 2, "name": "CUTTING THE NOISE", "keywords": "Tuning out · Inner voice · Clarity · Filtering opinions", "message": "Silence the opinions that do not build your soul. Filter out the static and focus strictly on your inner voice.", "meaning": "Too many voices are weighing in. Cutting The Noise asks you to mute the opinions that do not help you grow — the critical friend, the ex's commentary, the endless advice. Only you live inside this heart. Get quiet enough to hear your own voice, and let that guide your next step in love.", "reflection": "Whose opinion about my love life have I been giving too much weight?", "affirmation": "I silence the noise and trust my inner voice."},
+  {"id": 41, "cat": 2, "name": "STANDING IN MY POWER", "keywords": "Self-worth · Strength · Sovereignty · No more settling", "message": "Own your strength and claim your worth. You are no longer surviving; you are the sovereign ruler of your life.", "meaning": "Stand tall in what you are worth. Standing In My Power marks the moment you stop accepting relationships that diminish you. You are no longer just surviving love — you are deciding what love must look like for you. Own your strength, raise your standard, and remember: you set the terms of your life.", "reflection": "What standard am I ready to raise in how I let others treat me?", "affirmation": "I stand in my power and claim my worth."},
+  {"id": 42, "cat": 2, "name": "NO REGRETS, JUST LESSONS", "keywords": "Lessons learned · Release guilt · Wisdom · Growth", "message": "Nothing was wasted; everything was a lesson. Release the guilt of the past and carry the wisdom forward.", "meaning": "Nothing was wasted. No Regrets, Just Lessons reframes the past relationship, the mistake, the time you wish you had back — as the experience that made you wiser. Let go of the guilt and keep the wisdom. You know things now that you could not have learned any other way, and they will protect your heart going forward.", "reflection": "What lesson from my past love am I ready to be grateful for?", "affirmation": "Every chapter taught me. I carry the wisdom forward."},
+  {"id": 43, "cat": 2, "name": "EMOTIONAL DETOX", "keywords": "Release · Cleansing · Letting go of resentment · Lightness", "message": "Flush out the stagnant resentment and painful weight. Cleanse your emotional slate to welcome fresh alignments.", "meaning": "It is time to let it out. Emotional Detox calls you to release the anger, resentment or sadness you have been carrying. Cry it out, write it out, talk it out — whatever helps it move. Holding on to old pain only weighs down the heart that is trying to heal. Make space, and feel how much lighter you become.", "reflection": "What feeling have I been holding in that is ready to be released?", "affirmation": "I release what weighs me down and welcome lightness."},
+  {"id": 44, "cat": 2, "name": "RECLAIMING THE CROWN", "keywords": "Dignity restored · Confidence · Self-respect · Royalty", "message": "Pick up your dignity and put your crown back on. Remember who you are and walk like the royalty you are born to be.", "meaning": "Put your crown back on. Reclaiming The Crown arrives after a season that shook your confidence and dignity. Remember who you were before the hurt — and who you are becoming. Hold your head high. You do not need anyone's permission to see yourself as worthy. Walk like the royalty you are.", "reflection": "When did I let someone make me forget my worth, and how do I remember it now?", "affirmation": "I reclaim my crown and walk in my royalty."},
+  {"id": 45, "cat": 2, "name": "SOUL RENEWAL", "keywords": "Rebirth · Renewed hope · Readiness · Safe to love", "message": "Your heart is fully restored and reborn. You are ready to love and be loved with total clarity and safety.", "meaning": "Your heart is new again. Soul Renewal marks a fresh beginning — strong, hopeful and wiser than before. You are not the person who got hurt; you are the person who healed. You are ready to love and be loved with clear eyes and a steady heart. Step into this new chapter with faith.", "reflection": "What does my renewed heart want in love now?", "affirmation": "My heart is reborn, ready to love with clarity and safety."},
+  {"id": 46, "cat": 3, "name": "SOUL TIE", "keywords": "Deep bond · Spiritual connection · Destiny · Timeless tie", "message": "A profound spiritual connection that transcends time. Your souls are deeply intertwined by divine design.", "meaning": "This bond runs deeper than logic. Soul Tie speaks of a connection that feels destined — as if your paths were woven together long before you met. Honour its depth, and stay honest about whether it lifts you or holds you back. A true soul tie helps you grow. Choose the ties that bring you closer to your highest self.", "reflection": "Does this connection help me grow, or keep me stuck?", "affirmation": "I honour the sacred bonds that elevate my soul."},
+  {"id": 47, "cat": 3, "name": "MATCH MY ENERGY", "keywords": "Equal effort · Matching standards · Mutual devotion · No settling", "message": "No more settling. You have finally found someone who mirrors your worth and meets your highest frequency.", "meaning": "Finally, someone who meets you where you are. Match My Energy signals a partner who gives as much as you give — in attention, effort, care and ambition. No more lowering your standard to keep a connection alive. When the effort is mutual, love feels balanced and easy. Settle for nothing less.", "reflection": "Is the effort in my connection truly mutual?", "affirmation": "I attract a love that matches my energy and my worth."},
+  {"id": 48, "cat": 3, "name": "HOLDING DOWN THE FORT", "keywords": "Loyalty · Standing together · Resilience · Through every season", "message": "True loyalty tested by time. Standing strong together through every season, protecting the love you built.", "meaning": "This love holds steady when life gets hard. Holding Down The Fort describes a partnership that does not run when storms arrive — someone who stands beside you and protects what you built together. Loyalty proven by time is rare. Treasure it, and be that steady presence in return.", "reflection": "Who has stood by me through the hard seasons, and how do I honour that?", "affirmation": "We stand together, and our love holds strong."},
+  {"id": 49, "cat": 3, "name": "DIVINE UNION", "keywords": "Sacred partnership · Blessing · Shared destiny · Abundance", "message": "A sacred partnership blessed by the cosmos. Together, your combined light manifests ultimate abundance.", "meaning": "This union is blessed. Divine Union is one of the deck's highest cards: a partnership that lifts both people — in love, in purpose, in prosperity. Together you become more than either of you alone. Recognise it, nurture it, and trust that this connection was meant to bring abundance into both your lives.", "reflection": "How does this love help both of us become more?", "affirmation": "Our union is sacred and blessed with abundance."},
+  {"id": 50, "cat": 3, "name": "LOCKED IN", "keywords": "Commitment · Security · Mutual devotion · Chosen", "message": "Completely committed and deeply secure. Your hearts are officially chosen and tightly bound in mutual devotion.", "meaning": "The decision is made: this is the one. Locked In marks a relationship that has reached real commitment — secure, chosen and open. No more wondering where you stand. Let that security settle your nervous system. You can stop scanning for exits and start building something solid together.", "reflection": "What can I build now that I no longer have to wonder where I stand?", "affirmation": "I am chosen, secure, and fully devoted."},
+  {"id": 51, "cat": 3, "name": "THE REAL ONE", "keywords": "Genuine person · Loyalty · No games · Authenticity", "message": "You have found a rare, genuine soul. Someone who loves your truth and stands by you with unbroken loyalty.", "meaning": "You found a real one. The Real One points to someone genuine — no games, no masks, no strategy. They love the true you and show it with full sincerity. Notice how different that feels from what came before. Let yourself trust it, and give that same honesty back.", "reflection": "How does it feel to be loved without having to perform?", "affirmation": "I am loved for my truth by someone true."},
+  {"id": 52, "cat": 3, "name": "BIG LOVE ENERGY", "keywords": "Radiant love · Joy · Visible happiness · Positive energy", "message": "Your love story inspires the world. Radiating immense joy, passion, and beautiful alignment for everyone to see.", "meaning": "Your love is glowing, and everyone can see it. Big Love Energy captures a season of overflowing joy and passion in your relationship — the kind that lights up a room and inspires the people around you. Enjoy it fully. Share the joy, celebrate each other, and let this happiness be seen.", "reflection": "How can we celebrate the love we have right now?", "affirmation": "Our love radiates joy for all to see."},
+  {"id": 53, "cat": 3, "name": "RIDE OR DIE", "keywords": "Unbreakable partnership · Teamwork · Through it all · Devotion", "message": "Unwavering partnership through thick and thin. Through every battle and victory, you walk as an unbreakable team.", "meaning": "Two people, one team. Ride Or Die describes a partner who is with you in every battle and every victory — through good times and hard times alike. You build the future together, side by side. This kind of loyalty is a foundation. Protect it and keep showing up for each other.", "reflection": "In what ways do we show up as a true team?", "affirmation": "We are an unbreakable team through every season."},
+  {"id": 54, "cat": 3, "name": "THE REAL DEAL", "keywords": "Lasting love · Solid foundation · Future · Family", "message": "This is not a temporary spark; this is the true foundation. A lasting love built on absolute reality.", "meaning": "This is not a passing spark. The Real Deal confirms a love built on a strong foundation — one ready to grow into a shared future, even a family. Stop waiting for it to fall apart. This is real, and it is meant to last. Invest in it with confidence.", "reflection": "What future am I ready to build with this person?", "affirmation": "This is the real deal, a love built to last."},
+  {"id": 55, "cat": 3, "name": "SIGNED, SEALED, DELIVERED", "keywords": "Engagement · Marriage · Official promise · Destiny fulfilled", "message": "Destiny fulfilled. The promises are locked, the commitment is official, and your happily ever after is here.", "meaning": "The promise is made official. Signed, Sealed, Delivered is the card of engagement, marriage and formal commitment — the moment love is declared in front of the world. Everything is coming together beautifully. Celebrate it. Your happily ever after is not a fantasy; it is arriving.", "reflection": "What promise am I ready to make, or ready to receive?", "affirmation": "My commitment is sealed, and my happily ever after is here."},
+  {"id": 56, "cat": 3, "name": "NO CAP, IT'S LOVE", "keywords": "True love · No games · Sincerity · Open heart", "message": "Pure, unfiltered affection without the games. A love so transparent and true, it speaks for itself.", "meaning": "It is real. No Cap, It's Love guarantees the feeling is genuine — no hidden motives, no conditions, no games. Lower the guard you built for the wrong people. This person means it. Open your heart and let yourself receive a love that is honest all the way through.", "reflection": "What guard am I still holding up that this love does not require?", "affirmation": "This love is real, and I open my heart to it."},
+  {"id": 57, "cat": 3, "name": "FOREVER VIBE", "keywords": "Lifelong love · Best friends · Ease · Safe haven", "message": "A timeless connection built on deep friendship and absolute ease. You have found your permanent safe haven.", "meaning": "Lover and best friend in one. Forever Vibe describes a relationship of deep understanding and easy comfort — the kind that grows richer over decades. With this person you can simply be yourself. Cherish the quiet moments as much as the big ones. This is your safe place to come home to.", "reflection": "What everyday moments with my person do I want to cherish more?", "affirmation": "I have found my forever, my safe haven."},
+  {"id": 58, "cat": 3, "name": "HEALING TOGETHER", "keywords": "Mutual healing · Growth together · Safe space · Support", "message": "Mutual restoration and gentle growth. A safe space where your souls support each other's evolutionary healing.", "meaning": "Love as medicine. Healing Together speaks of a relationship where both of you help mend old wounds and grow into better versions of yourselves. It is gentle, honest and safe. Let them see the tender places, and hold theirs with care. Growing side by side is one of the deepest forms of love.", "reflection": "What part of me is ready to heal within this safe love?", "affirmation": "We heal together and grow in love."},
+  {"id": 59, "cat": 3, "name": "THE ULTIMATE PRIZE", "keywords": "Cherished · Valued · Reward for patience · Worth honoured", "message": "You are fully valued and deeply cherished. This connection is the golden reward for protecting your worth.", "meaning": "You are someone's treasure. The Ultimate Prize marks the love that comes after you learned to protect your worth — a person who sees your value and cherishes you as their greatest gift. Your standards, patience and self-love led you here. Receive this love fully. You earned it by never settling.", "reflection": "How does it feel to be valued as I always deserved?", "affirmation": "I am cherished, and I receive the love I have earned."},
+  {"id": 60, "cat": 3, "name": "THE GOLDEN ERA OF LOVE", "keywords": "Peak happiness · Legacy · Lasting union · Golden season", "message": "Entering the absolute pinnacle of romantic bliss. A lifetime of happiness, legacy, and true union awaits you.", "meaning": "The golden era begins. The deck's final card marks the peak of romantic fulfilment — a season of joy, prosperity and a lasting foundation for a family and a legacy. Everything you healed, learned and chose has led you here. Step into this time with gratitude and enjoy every moment of it.", "reflection": "What legacy of love do I want to build from here?", "affirmation": "My golden era of love is here, and I welcome it fully."}
+];
+
+// -- DECK STATE --
+let shuffledDeck = [...CARDS];
+let drawnIndex = 0;
+let currentCard = null;
+let currentView = 'deck';
+let cardOrigin = 'deck';          // deck | spread | all | history
+const STORE = 'mbc_';
+
+const preloaded = {};
+
+function preload(cards) {
+  cards.forEach(c => {
+    if (!c || preloaded[c.id]) return;
+    const img = new Image();
+    img.src = c.id + '.webp';
+    preloaded[c.id] = img;
+  });
+}
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// -- ACCESS CONTROL --
+const VALID_CODE = 'BONDS2026';
+
+function unlock() {
+  document.getElementById('access-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  initDeck();
+}
+
+function checkCode() {
+  var rawInput = document.getElementById('code-input').value;
+  var input = rawInput.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (input === VALID_CODE) {
+    try { localStorage.setItem(STORE + 'unlocked', '1'); } catch (e) {}
+    unlock();
+  } else {
+    var err = document.getElementById('error-msg');
+    err.style.display = 'block';
+    document.getElementById('code-input').style.borderColor = '#F09AA8';
+    setTimeout(function() {
+      err.style.display = 'none';
+      document.getElementById('code-input').style.borderColor = '';
+    }, 3000);
+  }
+}
+
+document.getElementById('code-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkCode();
+});
+
+// -- INIT --
+function initDeck() {
+  shuffledDeck = shuffleArray([...CARDS]);
+  drawnIndex = 0;
+  preload(shuffledDeck.slice(0, 3));
+  [updateCounter, buildCategoryTabs, () => buildAllCards(CARDS), initSpread]
+    .forEach(step => { try { step(); } catch (e) { console.error('init step failed:', e); } });
+}
+
+function updateCounter() {
+  const remaining = shuffledDeck.length - drawnIndex;
+  document.getElementById('counter').textContent = `${remaining} Cards`;
+}
+
+// -- VIEWS --
+function switchView(view) {
+  currentView = view;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+  document.getElementById('deck-view').style.display = 'none';
+  document.getElementById('card-view').style.display = 'none';
+  document.getElementById('all-cards-view').style.display = 'none';
+  document.getElementById('spread-view').style.display = 'none';
+  document.getElementById('history-view').style.display = 'none';
+
+  if (view === 'deck') {
+    document.getElementById('deck-view').style.display = 'flex';
+    document.getElementById('nav-deck').classList.add('active');
+  } else if (view === 'card') {
+    document.getElementById('card-view').style.display = 'flex';
+    updateCardActions();
+    const navId = cardOrigin === 'spread' ? 'nav-spread'
+                : cardOrigin === 'all' ? 'nav-all'
+                : cardOrigin === 'history' ? 'nav-history' : 'nav-deck';
+    document.getElementById(navId).classList.add('active');
+  } else if (view === 'all') {
+    document.getElementById('all-cards-view').style.display = 'flex';
+    document.getElementById('nav-all').classList.add('active');
+  } else if (view === 'spread') {
+    document.getElementById('spread-view').style.display = 'flex';
+    document.getElementById('nav-spread').classList.add('active');
+  } else if (view === 'history') {
+    document.getElementById('history-view').style.display = 'flex';
+    document.getElementById('nav-history').classList.add('active');
+    renderHistory();
+  }
+  window.scrollTo(0, 0);
+}
+
+function showDeck() { switchView('deck'); }
+
+function updateCardActions() {
+  const box = document.getElementById('card-view-actions');
+  box.innerHTML = '';
+  const add = (label, cls, fn) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'btn ' + cls;
+    b.textContent = label;
+    b.onclick = fn;
+    box.appendChild(b);
+  };
+  if (cardOrigin === 'spread') {
+    add('← Back to the Spread', 'btn-primary', () => switchView('spread'));
+  } else if (cardOrigin === 'all') {
+    add('← Back to All Cards', 'btn-primary', () => switchView('all'));
+  } else if (cardOrigin === 'history') {
+    add('← Back to Love Notes', 'btn-primary', () => switchView('history'));
+  } else {
+    add('Pull Another', 'btn-primary', drawCard);
+    add('Back to Deck', 'btn-secondary', showDeck);
+  }
+}
+
+// -- SHUFFLE --
+function shuffleDeck() {
+  const pile = document.getElementById('deck-pile');
+  pile.classList.add('shuffling');
+  setTimeout(() => { pile.classList.remove('shuffling'); }, 1800);
+  shuffledDeck = shuffleArray([...CARDS]);
+  drawnIndex = 0;
+  preload(shuffledDeck.slice(0, 3));
+  updateCounter();
+}
+
+// -- DRAW --
+function drawCard() {
+  if (drawnIndex >= shuffledDeck.length) {
+    shuffledDeck = shuffleArray([...CARDS]);
+    drawnIndex = 0;
+  }
+  currentCard = shuffledDeck[drawnIndex++];
+  cardOrigin = 'deck';
+  preload(shuffledDeck.slice(drawnIndex, drawnIndex + 3));
+  updateCounter();
+  showCardUnrevealed(currentCard);
+  document.getElementById('drawn-count').textContent = `Card ${drawnIndex} of ${CARDS.length}`;
+  switchView('card');
+}
+
+function showCardUnrevealed(card) {
+  cardRevealed = false;
+  const backEl = document.getElementById('card-back-el');
+  const faceEl = document.getElementById('card-face');
+  backEl.style.display = 'flex';
+  faceEl.style.display = 'none';
+  renderCardFace(card, faceEl);
+  document.getElementById('reading-panel').style.display = 'none';
+  document.getElementById('reading-panel').innerHTML = '';
+  document.getElementById('reading-hint').style.display = 'none';
+}
+
+function renderCardFace(card, el) {
+  const imgSrc = `${card.id}.webp`;
+  el.innerHTML = `<img src="${imgSrc}" alt="${card.name}" onerror="this.onerror=null; this.src='';">`;
+}
+
+function renderReadingPanel(card) {
+  const panel = document.getElementById('reading-panel');
+  panel.innerHTML = `
+    <div class="reading-category">${CATEGORIES[card.cat]}</div>
+    <div class="reading-name">${card.name}</div>
+    <div class="reading-keywords">${card.keywords}</div>
+    <div class="card-section-label">✦ The Message</div>
+    <div class="card-message">${card.message}</div>
+    <div class="card-section-label">◆ What It Means for Love</div>
+    <div class="card-meaning">${card.meaning}</div>
+    <div class="card-section-label">❖ Heart Check</div>
+    <div class="card-reflection">${card.reflection}</div>
+    <div class="card-affirmation">“${card.affirmation}”</div>
+    <div class="card-footer-brand">PsychicSoulStar · Melanin Bonds &amp; Connections Oracle</div>
+  `;
+  panel.style.display = 'block';
+  document.getElementById('reading-hint').style.display = 'block';
+}
+
+let cardRevealed = false;
+
+function flipCard() {
+  if (!currentCard) return;
+  if (cardRevealed) {
+    cardRevealed = false;
+    document.getElementById('card-back-el').style.display = 'flex';
+    document.getElementById('card-face').style.display = 'none';
+    document.getElementById('reading-panel').style.display = 'none';
+    document.getElementById('reading-hint').style.display = 'none';
+    return;
+  }
+  cardRevealed = true;
+  document.getElementById('card-back-el').style.display = 'none';
+  document.getElementById('card-face').style.display = 'block';
+  if (cardOrigin === 'deck') logDraw(currentCard, 'Daily pull');
+  renderReadingPanel(currentCard);
+}
+
+// -- ALL CARDS --
+let activeCategory = 'all';
+
+function buildCategoryTabs() {
+  const container = document.getElementById('cat-tabs');
+  container.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'cat-tab active';
+  allBtn.textContent = 'All 60';
+  allBtn.onclick = () => filterByCategory('all', allBtn);
+  container.appendChild(allBtn);
+
+  CATEGORIES.forEach((name, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-tab';
+    btn.textContent = CAT_TABS[i];
+    btn.onclick = () => filterByCategory(i, btn);
+    container.appendChild(btn);
+  });
+}
+
+function filterByCategory(cat, btn) {
+  activeCategory = cat;
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterCards(document.getElementById('search-input').value);
+}
+
+function filterCards(term) {
+  if (term === undefined) term = document.getElementById('search-input').value;
+  const lower = term.toLowerCase();
+  const filtered = CARDS.filter(c => {
+    const matchCat = activeCategory === 'all' || c.cat === activeCategory;
+    const matchSearch = !lower || c.name.toLowerCase().includes(lower) ||
+      c.message.toLowerCase().includes(lower) || c.keywords.toLowerCase().includes(lower) ||
+      c.meaning.toLowerCase().includes(lower);
+    return matchCat && matchSearch;
+  });
+  buildAllCards(filtered);
+}
+
+function buildAllCards(cards) {
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  cards.forEach(card => {
+    const el = document.createElement('div');
+    el.className = 'mini-card';
+    el.onclick = () => openCardFromList(card, 'all');
+    el.innerHTML = `
+      <div class="mini-card-num">#${card.id} · ${CATEGORIES[card.cat]}</div>
+      <div class="mini-card-name">${card.name}</div>
+      <div class="mini-card-truth">${card.keywords}</div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function openCardFromList(card, origin) {
+  currentCard = card;
+  cardOrigin = origin || 'all';
+  showCardUnrevealed(card);
+  document.getElementById('drawn-count').textContent = `Card #${card.id}`;
+  switchView('card');
+  flipCard();
+}
+
+// -- LOVE NOTES / DRAW JOURNAL (localStorage) --
+const HKEY = STORE + 'history';
+
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(HKEY) || '[]'); }
+  catch (e) { return []; }
+}
+
+function saveHistory(h) {
+  try { localStorage.setItem(HKEY, JSON.stringify(h.slice(-300))); }
+  catch (e) { console.error('love notes save failed:', e); }
+}
+
+function logDraw(card, context) {
+  if (!card) return;
+  const h = loadHistory();
+  const last = h[h.length - 1];
+  const now = Date.now();
+  // ignore an identical entry within a few seconds (double taps, re-flips)
+  if (last && last.id === card.id && last.context === context && now - last.t < 5000) return;
+  h.push({ t: now, id: card.id, name: card.name, context: context, note: '' });
+  saveHistory(h);
+}
+
+function dayLabel(ts) {
+  const d = new Date(ts), t = new Date();
+  const same = (a, b) => a.toDateString() === b.toDateString();
+  const y = new Date(t.getTime() - 86400000);
+  if (same(d, t)) return 'Today';
+  if (same(d, y)) return 'Yesterday';
+  return d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function timeLabel(ts) {
+  return new Date(ts).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+}
+
+function escapeAttr(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function renderHistory() {
+  const h = loadHistory();
+  const sum = document.getElementById('history-summary');
+  const list = document.getElementById('history-list');
+
+  if (!h.length) {
+    sum.style.display = 'none';
+    list.innerHTML = '<p class="history-empty">No love notes yet.<br>' +
+      'Every card you pull is saved here automatically.</p>';
+    return;
+  }
+  sum.style.display = 'block';
+
+  const counts = {};
+  h.forEach(e => { counts[e.name] = (counts[e.name] || 0) + 1; });
+  const repeats = Object.keys(counts).filter(n => counts[n] > 1)
+    .sort((a, b) => counts[b] - counts[a]).slice(0, 3);
+
+  sum.innerHTML =
+    '<div class="history-summary-top">' +
+      '<div class="history-count">' + h.length + '<span>pulls</span></div>' +
+      '<div class="history-count">' + Object.keys(counts).length + '<span>cards seen</span></div>' +
+    '</div>' +
+    (repeats.length
+      ? '<div class="history-label">Cards that keep coming back</div><div class="history-repeat">' +
+        repeats.map(n => '<b>' + n + '</b> · ' + counts[n] + ' times').join('<br>') + '</div>'
+      : '<div class="history-repeat" style="opacity:0.6">No card has repeated yet.</div>');
+
+  let html = '', lastDay = '';
+  h.slice().reverse().forEach(e => {
+    const d = dayLabel(e.t);
+    if (d !== lastDay) { html += '<div class="history-day">' + d + '</div>'; lastDay = d; }
+    html +=
+      '<div class="history-entry">' +
+        '<img class="history-thumb" src="' + e.id + '.webp" alt="" data-card="' + e.id + '">' +
+        '<div class="history-body">' +
+          '<div class="history-name" data-card="' + e.id + '">' + e.name + '</div>' +
+          '<div class="history-meta">' + timeLabel(e.t) + ' · ' + e.context + '</div>' +
+          '<input class="history-note" data-t="' + e.t + '" value="' + escapeAttr(e.note || '') + '"' +
+                ' placeholder="What did it mean for your heart?">' +
+        '</div>' +
+      '</div>';
+  });
+  list.innerHTML = html;
+  list.querySelectorAll('.history-thumb').forEach(img => {
+    img.onerror = function () { this.style.visibility = 'hidden'; };
+  });
+}
+
+// notes save as they are typed; thumbnails and names open the full reading
+document.getElementById('history-list').addEventListener('change', function (e) {
+  const inp = e.target.closest('.history-note');
+  if (!inp) return;
+  const t = Number(inp.dataset.t);
+  const h = loadHistory();
+  const row = h.find(x => x.t === t);
+  if (row) { row.note = inp.value; saveHistory(h); }
+});
+
+document.getElementById('history-list').addEventListener('click', function (e) {
+  const el = e.target.closest('[data-card]');
+  if (!el) return;
+  const card = CARDS.find(c => c.id === Number(el.dataset.card));
+  if (card) openCardFromList(card, 'history');
+});
+
+const NL = String.fromCharCode(10);
+
+function exportHistory(btn) {
+  const h = loadHistory();
+  if (!h.length) return;
+  const lines = ['MELANIN BONDS & CONNECTIONS ORACLE — MY LOVE NOTES', ''];
+  let lastDay = '';
+  h.forEach(e => {
+    const d = dayLabel(e.t);
+    if (d !== lastDay) { lines.push('', d.toUpperCase()); lastDay = d; }
+    lines.push('  ' + timeLabel(e.t) + '  ' + e.name + '  (' + e.context + ')');
+    if (e.note) lines.push('      ' + e.note);
+  });
+  const text = lines.join(NL);
+  const done = () => {
+    if (!btn) return;
+    const old = btn.dataset.label || btn.textContent;
+    btn.dataset.label = old;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => { btn.textContent = old; }, 1800);
+  };
+  try {
+    navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
+  } catch (err) { fallbackCopy(text, done); }
+}
+
+function fallbackCopy(text, done) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+let clearArmed = null;
+
+function clearHistory(btn) {
+  if (!loadHistory().length) return;
+  if (!btn) { doClear(); return; }
+
+  if (!clearArmed) {                       // first tap: ask for confirmation in place
+    btn.dataset.label = btn.dataset.label || btn.textContent;
+    btn.textContent = 'Tap again to erase';
+    btn.classList.add('btn-danger');
+    clearArmed = setTimeout(() => { resetClearButton(btn); }, 5000);
+    return;
+  }
+  resetClearButton(btn);                   // second tap: do it
+  doClear();
+}
+
+function resetClearButton(btn) {
+  clearTimeout(clearArmed);
+  clearArmed = null;
+  if (btn) {
+    btn.textContent = btn.dataset.label || 'Clear';
+    btn.classList.remove('btn-danger');
+  }
+}
+
+function doClear() {
+  try { localStorage.removeItem(HKEY); } catch (e) { console.error('clear failed:', e); }
+  renderHistory();
+}
+
+// -- SPREADS --
+const SPREADS = [
+  {
+    "title": "The Heart Check",
+    "sub": "One card · Daily love read",
+    "note": "One card, one honest look at your love life today. Read it before you check your phone.",
+    "byPillar": false,
+    "positions": [
+      {
+        "name": "Today's Heart Read",
+        "hint": "what your heart needs to know"
+      }
+    ]
+  },
+  {
+    "title": "Me, You & Us",
+    "sub": "Three cards · The core love spread",
+    "note": "Read the three as one story. The Us card only makes sense next to the two people in it.",
+    "byPillar": false,
+    "positions": [
+      {
+        "name": "Me",
+        "hint": "the energy I bring to this"
+      },
+      {
+        "name": "You",
+        "hint": "the energy they bring to this"
+      },
+      {
+        "name": "Us",
+        "hint": "where this connection really stands"
+      }
+    ]
+  },
+  {
+    "title": "Situationship Clarity",
+    "sub": "Three cards · For the gray area",
+    "note": "Use this when you are guessing. If the cards confirm what you already felt, believe them the first time.",
+    "byPillar": false,
+    "positions": [
+      {
+        "name": "What It Is",
+        "hint": "the real status, label or not"
+      },
+      {
+        "name": "What's Unsaid",
+        "hint": "what is not being told to you"
+      },
+      {
+        "name": "My Move",
+        "hint": "what protects my heart now"
+      }
+    ]
+  },
+  {
+    "title": "The Love Journey",
+    "sub": "Four cards · One from each category",
+    "note": "A full love scan, one card from each chapter of the deck. Read all four together before any one alone.",
+    "byPillar": true,
+    "positions": [
+      {
+        "name": "The Spark",
+        "hint": "what is drawing me in"
+      },
+      {
+        "name": "The Warning",
+        "hint": "the pattern to watch"
+      },
+      {
+        "name": "The Healing",
+        "hint": "what I must tend in myself"
+      },
+      {
+        "name": "The Union",
+        "hint": "where love is leading"
+      }
+    ]
+  },
+  {
+    "title": "Divine Union",
+    "sub": "Five cards · For soul ties and big decisions",
+    "note": "Save this for the big questions: commitment, reunion, letting go. Read The Block and The Lesson twice.",
+    "byPillar": false,
+    "positions": [
+      {
+        "name": "Where I Stand",
+        "hint": "my heart right now"
+      },
+      {
+        "name": "The Soul Tie",
+        "hint": "what binds me to this"
+      },
+      {
+        "name": "The Block",
+        "hint": "what stands in the way of real love"
+      },
+      {
+        "name": "The Lesson",
+        "hint": "what I must heal or learn"
+      },
+      {
+        "name": "The Union",
+        "hint": "where this leads if I choose it"
+      }
+    ]
+  }
+];
+
+let activeSpread = 1;                 // Me, You & Us by default
+let spreadCards = [];
+let spreadRevealed = [];
+
+function initSpread() {
+  markActiveTab();
+  newSpread();
+}
+
+function markActiveTab() {
+  document.querySelectorAll('#spread-tabs .spread-tab').forEach(b => {
+    b.classList.toggle('active', Number(b.dataset.spread) === activeSpread);
+  });
+}
+
+function selectSpread(i) {
+  if (i === null || isNaN(i) || i < 0 || i >= SPREADS.length) return;
+  activeSpread = i;
+  markActiveTab();
+  newSpread();
+}
+
+// one listener on the container - survives any re-render of the buttons
+document.getElementById('spread-tabs').addEventListener('click', function (e) {
+  const btn = e.target.closest('.spread-tab');
+  if (btn) selectSpread(Number(btn.dataset.spread));
+});
+
+function newSpread() {
+  const sp = SPREADS[activeSpread];
+  const n = sp.positions.length;
+  if (sp.byPillar) {
+    // one card from each category, in category order
+    spreadCards = sp.positions.map((_, i) =>
+      shuffleArray(CARDS.filter(c => c.cat === i))[0]);
+  } else {
+    spreadCards = shuffleArray([...CARDS]).slice(0, n);
+  }
+  spreadRevealed = new Array(n).fill(false);
+  preload(spreadCards);
+  document.getElementById('spread-title').textContent = sp.title;
+  document.getElementById('spread-subtitle').textContent = sp.sub;
+  document.getElementById('spread-note').textContent = sp.note;
+  renderSpread();
+}
+
+// -- AUTO-UNLOCK: defined here, called at the very end of this script, because
+// unlock() reaches into consts that are declared further down.
+function autoUnlock() {
+  try {
+    if (localStorage.getItem(STORE + 'unlocked') === '1') unlock();
+  } catch (e) {
+    console.error('auto-unlock failed:', e);
+  }
+}
+
+function renderSpread() {
+  const sp = SPREADS[activeSpread];
+  const n = sp.positions.length;
+  const grid = document.getElementById('spread-grid');
+  const cols = n === 1 ? 1 : (n === 4 ? 2 : 3);
+  grid.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+  grid.style.maxWidth = (n === 1 ? '200px' : (n === 4 ? '360px' : '500px'));
+  grid.innerHTML = '';
+
+  spreadCards.forEach((card, i) => {
+    const slot = document.createElement('div');
+    if (spreadRevealed[i]) {
+      slot.className = 'spread-card-slot revealed';
+      slot.innerHTML = `
+        <img class="spread-slot-img" src="${card.id}.webp" alt="${card.name}"
+             onerror="this.style.display='none';">
+        <div class="spread-slot-label">${sp.positions[i].name}</div>
+        <div class="spread-slot-hint">${sp.positions[i].hint}</div>
+        <div class="spread-slot-name">${card.name}</div>
+        <div class="spread-slot-read">Tap for the reading →</div>
+      `;
+      slot.onclick = () => openCardFromList(card, 'spread');
+    } else {
+      slot.className = 'spread-card-slot unrevealed';
+      slot.innerHTML = `<img src="card_back.webp" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.outerHTML='<span class=&quot;spread-mark&quot;>✦</span>';">`;
+      slot.onclick = () => {
+        spreadRevealed[i] = true;
+        logDraw(spreadCards[i], sp.title + ' · ' + sp.positions[i].name);
+        renderSpread();
+      };
+    }
+    grid.appendChild(slot);
+  });
+}
+
+autoUnlock();
+
+</script>
+</body>
+</html>
